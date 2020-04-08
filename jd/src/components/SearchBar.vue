@@ -1,5 +1,6 @@
 <template>
 	<div class="search_bar flex">
+		
 		<div class="search_bar_left">
 			<span></span>
 		</div>
@@ -7,12 +8,8 @@
 		<div class="search_bar_middle flex-item">
 			<i class="search_i"></i>
 			<input type="search" placeholder="wlh"/>
-			
 		</div>
-		
-		<div class="search_bar_right">
-			<a href="#">登录</a>
-		</div>
+		<div class="search_bar_right">登录</div>
 	</div>
 </template>
 
@@ -52,6 +49,8 @@
 				width: 100%;
 				height: 0.6rem;
 				border-radius:0.3rem ;
+				line-height: 0.6rem;
+				font-size: 0.28rem;
 				border: none;
 				outline: none;
 				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAeBAMAAACs80HuAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAwUExURUdwTOk7Puo7PfE+SP9SUuo7Peo8Pu0/Qeo7Peo7Peo7Pek7Peo7Pes8Pus8P+k7PaLYf6IAAAAPdFJOUwCjwREGj1sg9Hrd6bFINxDM6d8AAAD3SURBVCjPY2AAAv3/nxnk////sUo1nQEOoIIgoOaARfD/WmyC/wNQBL+lzZQCCn5FEfwCZJX2//8/AV2Qoej//3YMQWb9/x8xBBkq/v8vwBBk/f8/AUOQ/f9/AQxBhvX/N2AKnv//AVMwHsjBEJz//zs2lVgE5bFpx2pR//8FUMEvcEE+mOPX/2+AC/JAvcnyH6gDJvj+/w8DEM0G0gEVZN8PDfpqkA6o4O3//5tBtGX//98OEEHmJGAkXWBgCNQC0t9Abv4aKrMewmYAR6sAAzyKfydABX8yIASFGSCCjQ/ggr+mg61WOjgXnHwmKSnpiM4FO5EBAIlo6/K7pNY1AAAAAElFTkSuQmCC);
