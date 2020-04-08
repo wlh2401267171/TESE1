@@ -1,5 +1,5 @@
 <template>
-	<div class="search_bar flex">
+	<div class="search_bar flex " :class="{fixed:isFixed}">
 		
 		<div class="search_bar_left">
 			<span></span>
@@ -15,14 +15,33 @@
 
 <script>
 	export default{
-		
+		data(){
+			return{
+				isFixed:false
+			}
+		},
+		created(){
+			window.onscroll =()=>{
+				var scrollTop= document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+				
+				if(scrollTop >=150){
+					console.log(this.isFixed);
+					this.isFixed=true;
+				}else{
+					this.isFixed=false;
+				}
+			}
+		}
 	}
 </script>
 
 <style lang="less">
 	.search_bar{
+		position: fixed;
+		top:0;
+		z-index: 99999;
 		height: 1rem;
-		background-color: red;
+	  width: 100%;
 		.search_bar_left{
 			width: 1rem;
 			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAgCAYAAABgrToAAAAAAXNSR0IArs4c6QAAAHlJREFUWAnt2LEJwDAMRFE5c2ShLOKhsp69h3ISeAI1CnyBiJvA8dwcHu7+mNmrvbWdZivMHAq4dOgW7kDt65y6fiPg1AZnt8kr7haKPAgggAACfxOIskCbKdwabaaAlw0rmhaDAAIIIIBAQYA2U8CLX2kzFcB8m/kAgGUmQShl8pcAAAAASUVORK5CYII=);
@@ -71,7 +90,9 @@
 				
 			}
 		}
-		
+	&.fixed{
+		background-color:red;
+	}	
 		
 	}
 	

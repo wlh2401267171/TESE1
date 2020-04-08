@@ -41,5 +41,13 @@
    .flex-item{
    	flex:1;
    }
+   ul{
+	   padding :0;
+	   margin: 0;
+   }
+   li{
+	   list-style: none;
+	   padding-right: 0;
+   }
    
 </style>

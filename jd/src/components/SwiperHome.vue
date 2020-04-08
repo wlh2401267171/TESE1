@@ -19,7 +19,7 @@ export default {
       swiper: null,
       images: [
         require("@/assets/images/1.jpg"),
-        require("@/assets/images/5.jpg"),
+        require("@/assets/images/2.jpg"),
         require("@/assets/images/3.jpg"),
         require("@/assets/images/4.jpg")
       ]
@@ -44,7 +44,6 @@ export default {
 	width: 100%;
 	img{
 		width: 100%;
-		height: 350px;
 	}
 }
 
