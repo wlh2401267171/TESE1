@@ -6,6 +6,7 @@ import Category from '../views/Category.vue'
 import Pin from '../views/Pin.vue'
 import Cart from '../views/Cart.vue'
 import User from '../views/User.vue'
+import Product from '../views/product.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,11 @@ const routes = [
     path: '/user',
     name: 'user',
     component: User
+  },
+  {
+    path: '/product/:id',
+    name: 'product',
+    component: Product
   },
 
 ]

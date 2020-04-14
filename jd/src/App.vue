@@ -9,6 +9,9 @@
    html{
    	font-size: calc(100vw/7.5);
    }
+   html,body,#app{
+	   height: 100%;
+   } 
    body{
    	 /*background-color: #f6f6f6;
    	 font-size: 0.28rem;

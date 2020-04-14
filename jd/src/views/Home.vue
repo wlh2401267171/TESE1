@@ -6,8 +6,11 @@
   	<Swiper1></Swiper1>
     <quicknav></quicknav>
     <navbar></navbar>
+     <product></product>
   
-    <div style="height:1000px"></div>
+    <div style="height:1000px">
+     
+    </div>
     
   </div>
 </template>
@@ -17,6 +20,7 @@ import SearchBar from "@/components/SearchBar";
 import Swiper1 from "@/components/SwiperHome";
 import quicknav from "@/components/Quicknav";
 import navbar from "@/components/Navbar";
+import product from "@/components/Productlist";
 
 
 export default {
@@ -25,7 +29,8 @@ export default {
   	SearchBar,
   Swiper1,
   quicknav,
-  navbar
+  navbar,
+  product,
  
     
   }

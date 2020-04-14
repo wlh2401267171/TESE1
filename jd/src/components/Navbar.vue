@@ -3,7 +3,7 @@
     <ul class="nav_bar">
       <li v-for="(item,index) in nav" :key="index">
         <a :href="item.url">
-          <img :src="item.icon" />
+          <img :src="item.url == current? item.active_icon:item.icon" />
         </a>
       </li>
     </ul>
@@ -14,6 +14,8 @@
 export default {
   data() {
     return {
+      // current: 当前页面的路径
+      current:'/',
       nav: [
         {
           url: "/",
@@ -42,6 +44,12 @@ export default {
         }
       ]
     };
+  },
+  mounted(){
+    // 当前的路由对象
+    this.current = this.$route.path
+    console.log(this.current);
+    console.log(this.$route.path)
   }
 };
 </script>
