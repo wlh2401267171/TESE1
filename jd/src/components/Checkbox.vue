@@ -1,7 +1,6 @@
 <template>
   <div class="checkbox">
     <div class="checkbox-select" :class="{checked:flag}" @click="select"></div>
-    <div>{{flag}}</div>
   </div>
 </template>
 
@@ -10,19 +9,80 @@ export default {
   data() {
     return {
       arr: [],
-      flag: true,
+      flag: false
     };
   },
-  methods:{
-      select:function(){
-          console.log(this)
-          this.flag = !this.flag;
-        //   if(this.flag){
-        //       this.flag =false;
-        //   }else{
-        //       this.flag=true;
-        //   }
+  // 父组件使用 prop 传递数据给子组件。子组件通过自定义事件与父组件通信。(一个组件上的 v-model 默认会利用名为 value 的 prop 和名为 input 的事件)
+  model: {
+			prop: "val",
+			event: 'input'
+		},
+  props: {
+		val: {
+		type: [Array, Boolean],
+		required: true
+    },
+    
+		value: {
+		default: ""
+    }
+  },
+  methods: {
+    select: function() {
+      this.flag = !this.flag;
+
+      if (typeof this.val == "boolean") {
+        this.$emit("input", this.flag);
+      } else {
+        if (this.flag) {
+          this.arr.push(this.value);
+         
+        } else {
+          var that = this;
+          var index = 0;
+          this.arr.forEach(function(item, inx) {
+            if (item == that.value) {
+              index = inx;
+            }
+          });
+          this.arr.splice(index, 1);
+        }
+
+        this.$emit("input", this.arr);
       }
+
+
+    }
+  },
+  watch: {
+    val: function(val) {
+      if (typeof val == "boolean") {
+        this.flag = val;
+      } else {
+        this.arr = val;
+        var that = this;
+        var a = false;
+        this.arr.forEach(function(item, index) {
+          if (item == that.value) {
+            a = true;
+          }
+        });
+        this.flag = a;
+      }
+    }
+  },
+  created: function() {
+    this.arr = this.val;
+    if (typeof this.val == "boolean") {
+      this.flag = this.val;
+    } else {
+      var that = this;
+      this.arr.forEach(function(item, index) {
+        if (item == that.value) {
+          that.flag = true;
+        }
+      });
+    }
   }
 };
 </script>
