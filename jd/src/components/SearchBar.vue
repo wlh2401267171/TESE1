@@ -9,7 +9,7 @@
 			<i class="search_i"></i>
 			<input type="search" placeholder="wlh"/>
 		</div>
-		<div class="search_bar_right">登录</div>
+		<div class="search_bar_right" @click='login'>登录</div>
 	</div>
 </template>
 
@@ -18,6 +18,11 @@
 		data(){
 			return{
 				isFixed:false
+			}
+		},
+		methods:{
+			login(){
+				this.$router.push('/login')
 			}
 		},
 		created(){

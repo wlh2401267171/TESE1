@@ -82,7 +82,7 @@ export default {
      },
      price:{
          type:Number,
-         default:100.1
+         default:100.1  
      },
      count:{
          type:Number,

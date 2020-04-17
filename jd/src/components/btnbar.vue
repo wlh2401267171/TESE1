@@ -42,9 +42,6 @@
                 <div class="content-left flex-item">加入购物车</div>
                 <div class="content-right flex-item">立即购买</div>
             </div>
-            
-
-
 
         </div>
          </transition>
@@ -182,8 +179,8 @@ export default {
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
         width: 100%;
-        min-height: 10.5rem;
-        max-height: 15.5rem;
+        min-height: 9.5rem;
+        max-height: 12.5rem;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -320,6 +317,7 @@ export default {
         bottom: 0;
         left: 0;
         right: 0;
+        z-index: 2;
         background-color: rgba(0,0,0,0.7);
     }
 		.slide-enter {

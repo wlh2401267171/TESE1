@@ -16,7 +16,7 @@
       </div>
     </topbar>
     <div style="height:0.9rem" ref="product"></div>
-    <swiper></swiper>
+    <swiper style="z-index:0"></swiper>
 
     <div style="height:1000px" ref="shangpin">
       <h1>商品</h1>
